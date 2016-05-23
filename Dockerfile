@@ -6,7 +6,7 @@
  
 FROM        centos:6.7
 MAINTAINER  DIDI-ops "xbzy-test"
- 
+RUN         yum install -y iftop 
 RUN         yum clean all
 RUN         yum install -y openssh openssh-server httpd iputils dstat telnet net-tools
 RUN         sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config 
