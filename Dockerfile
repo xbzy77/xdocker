@@ -6,9 +6,8 @@
  
 FROM        centos:6.7
 MAINTAINER  DIDI-ops "xbzy-test"
-RUN         yum install -y lrzsz
-RUN         yum clean all
-RUN         rpm --rebuilddb
+#RUN         yum clean all
+#RUN         rpm --rebuilddb
 RUN         yum install -y openssh openssh-server httpd iputils dstat telnet net-tools
 RUN         sed -i 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config 
 RUN         ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
